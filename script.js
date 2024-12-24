@@ -87,23 +87,23 @@ const originalQuestions = [
         options: ["FAMAS", "Galil AR", "AUG", "SG 553"],
         correctAnswer: 1
     },
-     {
-        question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
+    {
+         question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
         options: ["Inferno", "Overpass", "Dust II", "Nuke"],
         correctAnswer: 2
     },
     {
-         question: "Что означает 'клатч' в CS2?",
+        question: "Что означает 'клатч' в CS2?",
         options: ["Установить бомбу", "Выиграть раунд последним оставшимся в живых игроком", "Обезвредить бомбу", "Сделать хэдшот"],
         correctAnswer: 1
     },
     {
-         question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
+        question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
         options: ["Кемпинг", "Ротация", "Флангование", "Раш"],
         correctAnswer: 3
     },
     {
-        question: "Что означает термин 'эко-раунд'?",
+         question: "Что означает термин 'эко-раунд'?",
         options: ["Раунд, где у игроков много денег для покупки", "Раунд, где у игроков очень мало денег и они не могут много купить", "Раунд без денег", "Раунд, когда вы получаете специальные способности"],
         correctAnswer: 1
     }
@@ -178,25 +178,25 @@ function showMenu(){
 
 
 function startQuiz() {
-    questions = shuffleArray([...originalQuestions]);
-  // Restore game state if it exists in local storage
-  const savedState = localStorage.getItem("quizState");
-  if (savedState) {
-      const state = JSON.parse(savedState)
-       currentQuestionIndex = state.currentQuestionIndex;
-       score = state.score;
+    // Restore game state if it exists in local storage
+    const savedState = localStorage.getItem("quizState");
+    if (savedState) {
+        const state = JSON.parse(savedState);
+         questions = state.questions;
+         currentQuestionIndex = state.currentQuestionIndex;
+         score = state.score;
         if(currentQuestionIndex < questions.length){
-           loadQuestion()
-         }
-         else {
-          endQuiz()
-         }
+             loadQuestion()
+          }
+          else {
+            endQuiz()
+          }
 
     } else {
+        questions = shuffleArray([...originalQuestions]);
         loadQuestion();
     }
 }
-
 
 function loadQuestion() {
     hasAnswered = false;
@@ -213,12 +213,12 @@ function loadQuestion() {
     });
     feedbackTextElement.textContent = "";
     nextButton.style.display = 'none';
-  updateScoreDisplay();
+    updateScoreDisplay();
 }
+
 function updateScoreDisplay() {
  scoreDisplayElement.textContent = score;
 }
-
 
 function checkAnswer(selectedOptionIndex, originalCorrectAnswerIndex, originalOptions, shuffledOptions) {
    if (hasAnswered) return;
@@ -245,11 +245,10 @@ function checkAnswer(selectedOptionIndex, originalCorrectAnswerIndex, originalOp
     } else {
         feedbackTextElement.textContent = "Неверно.";
     }
-   updateScoreDisplay();
+    updateScoreDisplay();
     nextButton.style.display = 'inline-block';
     saveGameState();
 }
-
 
 function nextQuestion() {
     currentQuestionIndex++;
@@ -260,6 +259,7 @@ function nextQuestion() {
     }
    saveGameState();
 }
+
 
 function endQuiz() {
     document.querySelector(".quiz-container").style.display = "none";
@@ -273,13 +273,13 @@ function restartQuiz() {
     endScreen.style.display = "none";
     resetQuiz();
     startQuiz();
-    localStorage.clear()
+   localStorage.clear()
 }
 
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-  updateScoreDisplay();
+  updateScoreDisplay()
     const listItems = optionsListElement.children;
 
     // Remove styling from old answers
@@ -288,15 +288,16 @@ function resetQuiz() {
     });
 }
 
+
 function saveGameState(){
     const gameState = {
-       currentQuestionIndex,
+       questions,
+        currentQuestionIndex,
        score,
     };
     localStorage.setItem("quizState", JSON.stringify(gameState))
 }
-
-// Initial Check to see if we have state
+ // Initial Check to see if we have state
   const savedState = localStorage.getItem("quizState");
  if(savedState) {
      startButton.click();
