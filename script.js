@@ -79,31 +79,31 @@ const originalQuestions = [
     },
     {
         question: "Какая граната лучше всего подходит для проверки углов и выявления врагов?",
-         options: ["Дымовая граната", "Коктейль Молотова", "Светошумовая граната", "Ложная граната"],
+        options: ["Дымовая граната", "Коктейль Молотова", "Светошумовая граната", "Ложная граната"],
         correctAnswer: 2
     },
-     {
+    {
         question: "Как называется оружие, которое является более дешевой версией AK-47, часто используемое в эко-раундах?",
         options: ["FAMAS", "Galil AR", "AUG", "SG 553"],
         correctAnswer: 1
     },
-    {
-       question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
-       options: ["Inferno", "Overpass", "Dust II", "Nuke"],
+     {
+        question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
+        options: ["Inferno", "Overpass", "Dust II", "Nuke"],
         correctAnswer: 2
     },
     {
-       question: "Что означает 'клатч' в CS2?",
+         question: "Что означает 'клатч' в CS2?",
         options: ["Установить бомбу", "Выиграть раунд последним оставшимся в живых игроком", "Обезвредить бомбу", "Сделать хэдшот"],
         correctAnswer: 1
     },
-     {
-        question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
+    {
+         question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
         options: ["Кемпинг", "Ротация", "Флангование", "Раш"],
         correctAnswer: 3
     },
-     {
-         question: "Что означает термин 'эко-раунд'?",
+    {
+        question: "Что означает термин 'эко-раунд'?",
         options: ["Раунд, где у игроков много денег для покупки", "Раунд, где у игроков очень мало денег и они не могут много купить", "Раунд без денег", "Раунд, когда вы получаете специальные способности"],
         correctAnswer: 1
     }
@@ -134,15 +134,6 @@ const rulesButton = document.getElementById('rules-button');
 const rulesScreen = document.getElementById('rules-screen');
 const closeRulesButton = document.getElementById('close-rules-button');
 
-// New Function
-function showMenu(){
-  menuDiv.style.display = 'block';
-  quizDiv.style.display = 'none';
-  endScreen.style.display = 'none';
-  confirmationMenu.style.display = 'none';
-  rulesScreen.style.display = 'none';
-}
-
 
 startButton.addEventListener('click', function() {
     resetQuiz();
@@ -154,6 +145,7 @@ startButton.addEventListener('click', function() {
 backToMenuButton.addEventListener('click', function() {
     endScreen.style.display = 'none';
     menuDiv.style.display = 'block';
+    localStorage.clear() // Clear state when returning to menu
 });
 quitButton.addEventListener('click', function() {
     confirmationMenu.style.display = 'block';
@@ -162,8 +154,8 @@ confirmQuitButton.addEventListener('click', function() {
    confirmationMenu.style.display = 'none';
     resetQuiz();
    quizDiv.style.display = 'none';
-    menuDiv.style.display = 'block';
-
+   menuDiv.style.display = 'block';
+   localStorage.clear() // Clear state when quitting
 });
  cancelQuitButton.addEventListener('click', function() {
    confirmationMenu.style.display = 'none';
@@ -176,13 +168,33 @@ closeRulesButton.addEventListener('click', function() {
    rulesScreen.style.display = 'none';
 });
 
-// Show menu on page load
-showMenu();
+function showMenu(){
+  menuDiv.style.display = 'block';
+  quizDiv.style.display = 'none';
+  endScreen.style.display = 'none';
+  confirmationMenu.style.display = 'none';
+  rulesScreen.style.display = 'none';
+}
 
 
 function startQuiz() {
     questions = shuffleArray([...originalQuestions]);
-    loadQuestion();
+  // Restore game state if it exists in local storage
+  const savedState = localStorage.getItem("quizState");
+  if (savedState) {
+      const state = JSON.parse(savedState)
+       currentQuestionIndex = state.currentQuestionIndex;
+       score = state.score;
+        if(currentQuestionIndex < questions.length){
+           loadQuestion()
+         }
+         else {
+          endQuiz()
+         }
+
+    } else {
+        loadQuestion();
+    }
 }
 
 
@@ -196,11 +208,15 @@ function loadQuestion() {
     shuffledOptions.forEach((option, index) => {
         const listItem = document.createElement("li");
         listItem.textContent = option;
-         listItem.addEventListener("click", () => checkAnswer(index, currentQuestion.correctAnswer, currentQuestion.options, shuffledOptions ));
+          listItem.addEventListener("click", () => checkAnswer(index, currentQuestion.correctAnswer, currentQuestion.options, shuffledOptions));
         optionsListElement.appendChild(listItem);
     });
     feedbackTextElement.textContent = "";
     nextButton.style.display = 'none';
+  updateScoreDisplay();
+}
+function updateScoreDisplay() {
+ scoreDisplayElement.textContent = score;
 }
 
 
@@ -229,24 +245,27 @@ function checkAnswer(selectedOptionIndex, originalCorrectAnswerIndex, originalOp
     } else {
         feedbackTextElement.textContent = "Неверно.";
     }
-    scoreDisplayElement.textContent = score;
+   updateScoreDisplay();
     nextButton.style.display = 'inline-block';
+    saveGameState();
 }
 
 
 function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
-        loadQuestion();
+      loadQuestion();
     } else {
         endQuiz();
     }
+   saveGameState();
 }
 
 function endQuiz() {
     document.querySelector(".quiz-container").style.display = "none";
     endScreen.style.display = "block";
     finalScore.textContent = `Ваш итоговый счет: ${score}`;
+    localStorage.clear()
 }
 
 function restartQuiz() {
@@ -254,12 +273,13 @@ function restartQuiz() {
     endScreen.style.display = "none";
     resetQuiz();
     startQuiz();
+    localStorage.clear()
 }
 
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    scoreDisplayElement.textContent = 0;
+  updateScoreDisplay();
     const listItems = optionsListElement.children;
 
     // Remove styling from old answers
@@ -267,6 +287,22 @@ function resetQuiz() {
         listItem.classList.remove("selected", "correct", "incorrect");
     });
 }
+
+function saveGameState(){
+    const gameState = {
+       currentQuestionIndex,
+       score,
+    };
+    localStorage.setItem("quizState", JSON.stringify(gameState))
+}
+
+// Initial Check to see if we have state
+  const savedState = localStorage.getItem("quizState");
+ if(savedState) {
+     startButton.click();
+   } else{
+    showMenu();
+ }
 
 nextButton.addEventListener("click", nextQuestion);
 restartButton.addEventListener("click", restartQuiz);
