@@ -7,106 +7,106 @@ function shuffleArray(array) {
 }
 
 const originalQuestions = [
-    {
-        question: "Какое оружие по умолчанию у Контр-Террористов в первом раунде?",
-        options: ["M4A4", "MP9", "USP-S", "Glock-18"],
-        correctAnswer: 2
-    },
-    {
-        question: "Какой из этих карт НЕТ в Активном Мап Пуле?",
-        options: ["Mirage", "Dust II", "Cache", "Inferno"],
-        correctAnswer: 2
-    },
-    {
-        question: "Каково основное назначение дымовой гранаты?",
-        options: ["Ослепить врагов", "Вызвать огненный урон", "Создать временное укрытие", "Замедлить движение врагов"],
-        correctAnswer: 2
-    },
-    {
-        question: "Сколько стоит светошумовая граната?",
-        options: ["$300", "$200", "$100", "$500"],
-        correctAnswer: 1
-    },
-    {
-        question: "Какое оружие известно высокой точностью и останавливающей силой, но низкой скорострельностью?",
-        options: ["AK-47", "AWP", "M4A1-S", "FAMAS"],
-        correctAnswer: 1
-    },
-    {
-        question: "Как называется внутриигровая голосовая команда для информирования товарищей по команде о вашем местоположении?",
-        options: ["Go Go Go", "Roger That", "Affirmative", "Reporting in"],
-        correctAnswer: 3
-    },
-    {
-        question: "Какой из этих вариантов не является распространенным вызовом на карте Mirage?",
-        options: ["Mid", "A Site", "B Site", "Garage"],
-        correctAnswer: 3
-    },
-    {
-        question: "Какова максимальная сумма денег, которую может иметь игрок в матче?",
-        options: ["$10,000", "$16,000", "$20,000", "Без ограничений"],
-        correctAnswer: 1
-    },
-    {
-        question: "Какая граната может быть использована для тушения коктейля Молотова/зажигательной?",
-        options: ["Светошумовая граната", "Дымовая граната", "HE граната", "Ложная граната"],
-        correctAnswer: 1
-    },
-    {
-        question: "Как называется стандартный стартовый пистолет Террористов?",
-        options: ["USP-S", "P2000", "Glock-18", "Five-SeveN"],
-        correctAnswer: 2
-    },
-    {
-        question: "Какой из следующих вариантов является винтовкой, обычно используемой на стороне CT?",
-        options: ["AK-47", "M4A4", "SG 553", "Galil AR"],
-        correctAnswer: 1
-    },
-    {
-        question: "Какое оружие известно своей способностью убивать с одного выстрела в голову даже бронированных противников?",
-        options: ["MP9", "P90", "AWP", "M249"],
-        correctAnswer: 2
-    },
-    {
-        question: "Каково назначение техники 'Присесть при ходьбе'?",
-        options: ["Для увеличения скорости", "Для уменьшения шума шагов", "Для более высокого прыжка", "Для улучшения прицеливания"],
-        correctAnswer: 1
-    },
-    {
-        question: "Как называется экономическая система в игре, где вы зарабатываете деньги за убийство врагов и выигрыш раундов?",
-        options: ["Система покупки", "Денежный поток", "Экономика", "Система дохода"],
-        correctAnswer: 2
-    },
-    {
-        question: "Какая граната лучше всего подходит для проверки углов и выявления врагов?",
-        options: ["Дымовая граната", "Коктейль Молотова", "Светошумовая граната", "Ложная граната"],
-        correctAnswer: 2
-    },
-    {
-        question: "Как называется оружие, которое является более дешевой версией AK-47, часто используемое в эко-раундах?",
+  {
+      question: "Какое оружие по умолчанию у Контр-Террористов в первом раунде?",
+      options: ["M4A4", "MP9", "USP-S", "Glock-18"],
+      correctAnswer: 2
+  },
+  {
+      question: "Какой из этих карт НЕТ в Активном Мап Пуле?",
+      options: ["Mirage", "Dust II", "Cache", "Inferno"],
+      correctAnswer: 2
+  },
+  {
+      question: "Каково основное назначение дымовой гранаты?",
+      options: ["Ослепить врагов", "Вызвать огненный урон", "Создать временное укрытие", "Замедлить движение врагов"],
+      correctAnswer: 2
+  },
+  {
+      question: "Сколько стоит светошумовая граната?",
+      options: ["$300", "$200", "$100", "$500"],
+      correctAnswer: 1
+  },
+  {
+      question: "Какое оружие известно высокой точностью и останавливающей силой, но низкой скорострельностью?",
+      options: ["AK-47", "AWP", "M4A1-S", "FAMAS"],
+      correctAnswer: 1
+  },
+  {
+      question: "Как называется внутриигровая голосовая команда для информирования товарищей по команде о вашем местоположении?",
+      options: ["Go Go Go", "Roger That", "Affirmative", "Reporting in"],
+      correctAnswer: 3
+  },
+  {
+      question: "Какой из этих вариантов не является распространенным вызовом на карте Mirage?",
+      options: ["Mid", "A Site", "B Site", "Garage"],
+      correctAnswer: 3
+  },
+  {
+      question: "Какова максимальная сумма денег, которую может иметь игрок в матче?",
+      options: ["$10,000", "$16,000", "$20,000", "Без ограничений"],
+      correctAnswer: 1
+  },
+  {
+      question: "Какая граната может быть использована для тушения коктейля Молотова/зажигательной?",
+      options: ["Светошумовая граната", "Дымовая граната", "HE граната", "Ложная граната"],
+      correctAnswer: 1
+  },
+  {
+      question: "Как называется стандартный стартовый пистолет Террористов?",
+      options: ["USP-S", "P2000", "Glock-18", "Five-SeveN"],
+      correctAnswer: 2
+  },
+  {
+      question: "Какой из следующих вариантов является винтовкой, обычно используемой на стороне CT?",
+      options: ["AK-47", "M4A4", "SG 553", "Galil AR"],
+      correctAnswer: 1
+  },
+  {
+      question: "Какое оружие известно своей способностью убивать с одного выстрела в голову даже бронированных противников?",
+      options: ["MP9", "P90", "AWP", "M249"],
+      correctAnswer: 2
+  },
+  {
+      question: "Каково назначение техники 'Присесть при ходьбе'?",
+      options: ["Для увеличения скорости", "Для уменьшения шума шагов", "Для более высокого прыжка", "Для улучшения прицеливания"],
+      correctAnswer: 1
+  },
+  {
+      question: "Как называется экономическая система в игре, где вы зарабатываете деньги за убийство врагов и выигрыш раундов?",
+      options: ["Система покупки", "Денежный поток", "Экономика", "Система дохода"],
+      correctAnswer: 2
+  },
+  {
+      question: "Какая граната лучше всего подходит для проверки углов и выявления врагов?",
+       options: ["Дымовая граната", "Коктейль Молотова", "Светошумовая граната", "Ложная граната"],
+      correctAnswer: 2
+  },
+  {
+      question: "Как называется оружие, которое является более дешевой версией AK-47, часто используемое в эко-раундах?",
         options: ["FAMAS", "Galil AR", "AUG", "SG 553"],
-        correctAnswer: 1
-    },
-    {
-         question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
-        options: ["Inferno", "Overpass", "Dust II", "Nuke"],
-        correctAnswer: 2
-    },
-    {
-        question: "Что означает 'клатч' в CS2?",
-        options: ["Установить бомбу", "Выиграть раунд последним оставшимся в живых игроком", "Обезвредить бомбу", "Сделать хэдшот"],
-        correctAnswer: 1
-    },
-    {
-        question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
-        options: ["Кемпинг", "Ротация", "Флангование", "Раш"],
-        correctAnswer: 3
-    },
-    {
-         question: "Что означает термин 'эко-раунд'?",
-        options: ["Раунд, где у игроков много денег для покупки", "Раунд, где у игроков очень мало денег и они не могут много купить", "Раунд без денег", "Раунд, когда вы получаете специальные способности"],
-        correctAnswer: 1
-    }
+      correctAnswer: 1
+  },
+  {
+       question: "На какой карте есть большая открытая зона, известная как 'Длина А'?",
+      options: ["Inferno", "Overpass", "Dust II", "Nuke"],
+      correctAnswer: 2
+  },
+  {
+      question: "Что означает 'клатч' в CS2?",
+      options: ["Установить бомбу", "Выиграть раунд последним оставшимся в живых игроком", "Обезвредить бомбу", "Сделать хэдшот"],
+      correctAnswer: 1
+  },
+  {
+      question: "Что за распространенная стратегия, когда несколько игроков одновременно атакуют сайт?",
+      options: ["Кемпинг", "Ротация", "Флангование", "Раш"],
+      correctAnswer: 3
+  },
+  {
+       question: "Что означает термин 'эко-раунд'?",
+      options: ["Раунд, где у игроков много денег для покупки", "Раунд, где у игроков очень мало денег и они не могут много купить", "Раунд без денег", "Раунд, когда вы получаете специальные способности"],
+      correctAnswer: 1
+  }
 ];
 
 let questions = [];
@@ -168,35 +168,36 @@ closeRulesButton.addEventListener('click', function() {
    rulesScreen.style.display = 'none';
 });
 
-function showMenu(){
-  menuDiv.style.display = 'block';
-  quizDiv.style.display = 'none';
-  endScreen.style.display = 'none';
-  confirmationMenu.style.display = 'none';
-  rulesScreen.style.display = 'none';
+function showMenu() {
+    menuDiv.style.display = 'block';
+    quizDiv.style.display = 'none';
+    endScreen.style.display = 'none';
+    confirmationMenu.style.display = 'none';
+    rulesScreen.style.display = 'none';
 }
 
 
 function startQuiz() {
-    // Restore game state if it exists in local storage
     const savedState = localStorage.getItem("quizState");
-    if (savedState) {
+      if (savedState) {
         const state = JSON.parse(savedState);
-         questions = state.questions;
-         currentQuestionIndex = state.currentQuestionIndex;
-         score = state.score;
-        if(currentQuestionIndex < questions.length){
-             loadQuestion()
-          }
-          else {
-            endQuiz()
-          }
+        questions = state.questions;
+        currentQuestionIndex = state.currentQuestionIndex;
+        score = state.score;
+         if (currentQuestionIndex < questions.length) {
+             loadQuestion();
+           quizDiv.style.display = 'block';
+          menuDiv.style.display = 'none';
+         } else {
+            endQuiz();
+        }
 
     } else {
-        questions = shuffleArray([...originalQuestions]);
-        loadQuestion();
+      questions = shuffleArray([...originalQuestions]);
+       loadQuestion();
     }
 }
+
 
 function loadQuestion() {
     hasAnswered = false;
@@ -213,12 +214,13 @@ function loadQuestion() {
     });
     feedbackTextElement.textContent = "";
     nextButton.style.display = 'none';
-    updateScoreDisplay();
+  updateScoreDisplay();
 }
 
 function updateScoreDisplay() {
  scoreDisplayElement.textContent = score;
 }
+
 
 function checkAnswer(selectedOptionIndex, originalCorrectAnswerIndex, originalOptions, shuffledOptions) {
    if (hasAnswered) return;
@@ -245,10 +247,11 @@ function checkAnswer(selectedOptionIndex, originalCorrectAnswerIndex, originalOp
     } else {
         feedbackTextElement.textContent = "Неверно.";
     }
-    updateScoreDisplay();
+   updateScoreDisplay();
     nextButton.style.display = 'inline-block';
     saveGameState();
 }
+
 
 function nextQuestion() {
     currentQuestionIndex++;
@@ -273,13 +276,14 @@ function restartQuiz() {
     endScreen.style.display = "none";
     resetQuiz();
     startQuiz();
-   localStorage.clear()
+    localStorage.clear()
 }
 
+
 function resetQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-  updateScoreDisplay()
+   currentQuestionIndex = 0;
+   score = 0;
+    updateScoreDisplay()
     const listItems = optionsListElement.children;
 
     // Remove styling from old answers
@@ -287,7 +291,6 @@ function resetQuiz() {
         listItem.classList.remove("selected", "correct", "incorrect");
     });
 }
-
 
 function saveGameState(){
     const gameState = {
@@ -297,13 +300,16 @@ function saveGameState(){
     };
     localStorage.setItem("quizState", JSON.stringify(gameState))
 }
+
+
  // Initial Check to see if we have state
   const savedState = localStorage.getItem("quizState");
- if(savedState) {
-     startButton.click();
-   } else{
-    showMenu();
- }
+  if (savedState) {
+    startQuiz();
+  } else {
+     showMenu();
+}
+
 
 nextButton.addEventListener("click", nextQuestion);
 restartButton.addEventListener("click", restartQuiz);
