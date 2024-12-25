@@ -5,7 +5,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background-image: url('cs2-bg.jpg');
+    background-image: url('cs-phone.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -169,7 +169,7 @@ button:hover {
     text-align: center;
     position: absolute;
     top: 25%;
-    left: 25%;
+    left: 17%; /* Updated left value */
     transform: translate(-50%, -50%);
     z-index: 1;
     position: relative;
@@ -187,7 +187,7 @@ button:hover {
     max-width: 600px;
     text-align: center;
     position: absolute;
-     top: 25%;
+    top: 25%;
     left: 25%;
     transform: translate(-50%, -50%);
     z-index: 1;
