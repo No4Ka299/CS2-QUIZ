@@ -1,4 +1,4 @@
-const API_KEY = '9685132CF9DAD5B34F3089AD140821FE'; // Вставлен ваш API-ключ
+const API_KEY = '7FDCB45FE78F6C80C4201D04C958647E'; // Обновлен API-ключ
 
 function getProfileInfo() {
     const steamLink = document.getElementById('steamLink').value;
@@ -29,8 +29,8 @@ function getProfileInfo() {
                 displayGameData(gameData)
             })
             .catch(error => {
+                console.error("Error in getProfileInfo:", error, error.message);
                 resultDiv.innerHTML = `Ошибка при получении данных: ${error}`;
-                console.error("Error in getProfileInfo:", error); // Логирование ошибок в getProfileInfo
             });
 
 
@@ -42,11 +42,15 @@ function getProfileInfo() {
 
 // Функция для получения данных о профиле Steam с использованием Steam API
 async function fetchSteamData(steamID) {
-        console.log("fetchSteamData called with SteamID:", steamID); // Добавлено
+        console.log("fetchSteamData called with SteamID:", steamID);
     const apiEndpoint = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${API_KEY}&steamids=${steamID}`;
 
     try {
-        const response = await fetch(apiEndpoint);
+        const response = await fetch(apiEndpoint, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
           
         if (!response.ok) {
             const message = `Ошибка: ${response.status}`;
@@ -62,17 +66,21 @@ async function fetchSteamData(steamID) {
            throw new Error("Профиль не найден");
     
     } catch(error) {
-        console.error("Error in fetchSteamData:", error); // Добавлено
-        throw new Error (`Произошла ошибка при запросе: ${error.message}`);
+        console.error("Error in fetchSteamData:", error, error.message);
+         throw new Error (`Произошла ошибка при запросе: ${error.message}`);
     }
 }
 
 async function fetchOwnedGames(steamID) {
-        console.log("fetchOwnedGames called with SteamID:", steamID); // Добавлено
+        console.log("fetchOwnedGames called with SteamID:", steamID);
     const apiEndpoint = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=${API_KEY}&steamid=${steamID}&include_appinfo=true&include_played_free_games=true`;
   
     try {
-        const response = await fetch(apiEndpoint);
+        const response = await fetch(apiEndpoint, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
         if(!response.ok) {
             const message = `Ошибка: ${response.status}`;
             throw new Error(message);
@@ -87,7 +95,7 @@ async function fetchOwnedGames(steamID) {
            throw new Error("У пользователя нет игр");
 
     } catch(error) {
-         console.error("Error in fetchOwnedGames:", error); // Добавлено
+        console.error("Error in fetchOwnedGames:", error, error.message);
         throw new Error(`Произошла ошибка при запросе списка игр: ${error.message}`);
     }
 }
