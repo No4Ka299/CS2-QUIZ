@@ -43,14 +43,10 @@ function getProfileInfo() {
 // Функция для получения данных о профиле Steam с использованием Steam API
 async function fetchSteamData(steamID) {
         console.log("fetchSteamData called with SteamID:", steamID);
-    const apiEndpoint = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${API_KEY}&steamids=${steamID}`;
+    const apiEndpoint = `/steam-api/ISteamUser/GetPlayerSummaries/v2/?key=${API_KEY}&steamids=${steamID}`;
 
     try {
-        const response = await fetch(apiEndpoint, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+        const response = await fetch(apiEndpoint);
           
         if (!response.ok) {
             const message = `Ошибка: ${response.status}`;
@@ -73,14 +69,10 @@ async function fetchSteamData(steamID) {
 
 async function fetchOwnedGames(steamID) {
         console.log("fetchOwnedGames called with SteamID:", steamID);
-    const apiEndpoint = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=${API_KEY}&steamid=${steamID}&include_appinfo=true&include_played_free_games=true`;
+    const apiEndpoint = `/steam-api/IPlayerService/GetOwnedGames/v1/?key=${API_KEY}&steamid=${steamID}&include_appinfo=true&include_played_free_games=true`;
   
     try {
-        const response = await fetch(apiEndpoint, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+        const response = await fetch(apiEndpoint);
         if(!response.ok) {
             const message = `Ошибка: ${response.status}`;
             throw new Error(message);
