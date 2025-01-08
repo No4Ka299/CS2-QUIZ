@@ -42,8 +42,8 @@ const teamRosters = {
     liquid: ["NAF", "jks", "Twistzz", "ultimate", "NertZ"],
     falcons: ["NiKo", "Magisk", "TeSeS", "degster", "kyxsan"],
     astralis: ["device", "cadiaN", "stavn", "jabbi", "Staehr"],
-    FURIA: ["FalleN", "chelo", "yuurih", "KSCERATO", "skullz"],
-    MIBR: ["exit", "Lucaozy", "saffee", "drop", "insani"]
+    furia: ["FalleN", "chelo", "yuurih", "KSCERATO", "skullz"],
+    mibr: ["exit", "Lucaozy", "saffee", "drop", "insani"]
 };
  const teamLogos = {
      spirit: 'url("https://img-cdn.hltv.org/teamlogo/syrtYYKR7sBRw3ZHy1YFX7.png?ixlib=java-2.1.0&w=100&s=8d98ab33e1c8139633132cb9eccda0af")',
@@ -55,9 +55,9 @@ const teamRosters = {
          the_mongolz: 'url("https://img-cdn.hltv.org/teamlogo/bRk2sh_tSTO6fq1GLhgcal.png?ixlib=java-2.1.0&w=100&s=1bd99148a19e1e706b543500206901d4")',
            liquid: 'url("https://img-cdn.hltv.org/teamlogo/JMeLLbWKCIEJrmfPaqOz4O.svg?ixlib=java-2.1.0&s=c02caf90234d3a3ebac074c84ba1ea62")',
             falcons: 'url("https://img-cdn.hltv.org/teamlogo/4eJSkDQINNM6Tbs4WvLzkN.png?ixlib=java-2.1.0&w=100&s=01e7f9dd30b34e66f429f43627c2e005")',
-            MIBR: 'url("https://img-cdn.hltv.org/teamlogo/sVnH-oAf1J5TnMwoY4cxUC.png?ixlib=java-2.1.0&w=100&s=8ace09ef5b2fac0eb7cd65213ad3cc85")',
-            FURIA: 'url("https://img-cdn.hltv.org/teamlogo/mvNQc4csFGtxXk5guAh8m1.svg?ixlib=java-2.1.0&s=11e5056829ad5d6c06c5961bbe76d20c")',
-             astralis: 'url("https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b2067")'
+            mibr: 'url("https://img-cdn.hltv.org/teamlogo/sVnH-oAf1J5TnMwoY4cxUC.png?ixlib=java-2.1.0&w=100&s=8ace09ef5b2fac0eb7cd65213ad3cc85")',
+            furia: 'url("https://img-cdn.hltv.org/teamlogo/mvNQc4csFGtxXk5guAh8m1.svg?ixlib=java-2.1.0&s=11e5056829ad5d6c06c5961bbe76d20c")',
+            astralis: 'url("https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b2067")'
    
  }
   const teamRatings = {
@@ -65,12 +65,14 @@ const teamRosters = {
         g2: 842,
         natus_vincere: 810,
         vitality: 686,
-         mouz: 631,
+        mouz: 631,
         faze: 578,
         the_mongolz: 446,
         liquid: 319,
         falcons: 274,
-        astralis: 261
+        astralis: 261,
+        mibr: 220,
+        furia: 309
     };
 
  const displayTeamRoster = (teamSelect, rosterDiv) => {
