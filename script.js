@@ -29,7 +29,7 @@ const playerRatings = {
         "karrigan": 1.0, "rain": 1.10, "broky": 1.25, "frozen": 1.20, "ropz": 1.30,
         "bLitz": 1.0, "Techno4K": 1.05, "910": 1.0, "mzinho": 1.05, "Senzu": 1.05,
         "NAF": 1.10, "jks": 1.15, "Twistzz": 1.25, "ultimate": 1.0, "NertZ": 1.15,
-         "NiKo": 1.30,  "Magisk": 1.20, "TeSeS": 1.10, "degster": 1.15, "kyxsan": 1.05, "device": 1.03, "cadiaN": 0.85, "stavn": 1.11, "jabbi": 1.12, "Staehr": 1.06, "FalleN": 0.98, "chelo": 1.00, "yuurih": 1.12, "KSCERATO": 1.18, "skullz": 1.05, "s": 1.05, "s": 1.05, "s": 1.05, "s": 1.05,
+         "NiKo": 1.30,  "Magisk": 1.20, "TeSeS": 1.10, "degster": 1.15, "kyxsan": 1.05, "device": 1.03, "cadiaN": 0.85, "stavn": 1.11, "jabbi": 1.12, "Staehr": 1.06, "FalleN": 0.98, "chelo": 1.00, "yuurih": 1.12, "KSCERATO": 1.18, "skullz": 1.05, "exit": 1.05, "Lucaozy": 0.99, "saffee": 1.01, "drop": 0.97, "insani": 1.15
     };
 const teamRosters = {
     spirit: ["sh1ro", "donk", "chopper", "magixx", "zont1x"],
@@ -41,11 +41,13 @@ const teamRosters = {
     the_mongolz: ["bLitz", "Techno4K", "910", "mzinho", "Senzu"],
     liquid: ["NAF", "jks", "Twistzz", "ultimate", "NertZ"],
     falcons: ["NiKo", "Magisk", "TeSeS", "degster", "kyxsan"],
-    astralis: ["device", "cadiaN", "stavn", "jabbi", "Staehr"]
+    astralis: ["device", "cadiaN", "stavn", "jabbi", "Staehr"],
+    FURIA: ["FalleN", "chelo", "yuurih", "KSCERATO", "skullz"],
+    MIBR: ["exit", "Lucaozy", "saffee", "drop", "insani"]
 };
  const teamLogos = {
      spirit: 'url("https://img-cdn.hltv.org/teamlogo/syrtYYKR7sBRw3ZHy1YFX7.png?ixlib=java-2.1.0&w=100&s=8d98ab33e1c8139633132cb9eccda0af")',
-      g2: 'url("https://i.imgur.com/oJ8K18m.png")',
+      g2: 'url("https://img-cdn.hltv.org/teamlogo/zFLwAELOD15BjJSDMMNBWQ.png?ixlib=java-2.1.0&w=100&s=88aeba1564bc27de69fb2302e47e1a7c")',
        natus_vincere: 'url("https://img-cdn.hltv.org/teamlogo/9iMirAi7ArBLNU8p3kqUTZ.svg?ixlib=java-2.1.0&s=4dd8635be16122656093ae9884675d0c")',
         vitality: 'url("https://img-cdn.hltv.org/teamlogo/ogcHrcCdzRvxbYvAz04KAN.png?ixlib=java-2.1.0&w=100&s=c7577435f1641f0802c586934e6a4b6a")',
         mouz: 'url("https://img-cdn.hltv.org/teamlogo/IejtXpquZnE8KqYPB1LNKw.svg?ixlib=java-2.1.0&s=7fd33b8def053fbfd8fdbb58e3bdcd3c")',
@@ -53,6 +55,8 @@ const teamRosters = {
          the_mongolz: 'url("https://img-cdn.hltv.org/teamlogo/bRk2sh_tSTO6fq1GLhgcal.png?ixlib=java-2.1.0&w=100&s=1bd99148a19e1e706b543500206901d4")',
            liquid: 'url("https://img-cdn.hltv.org/teamlogo/JMeLLbWKCIEJrmfPaqOz4O.svg?ixlib=java-2.1.0&s=c02caf90234d3a3ebac074c84ba1ea62")',
             falcons: 'url("https://img-cdn.hltv.org/teamlogo/4eJSkDQINNM6Tbs4WvLzkN.png?ixlib=java-2.1.0&w=100&s=01e7f9dd30b34e66f429f43627c2e005")',
+            MIBR: 'url("https://img-cdn.hltv.org/teamlogo/sVnH-oAf1J5TnMwoY4cxUC.png?ixlib=java-2.1.0&w=100&s=8ace09ef5b2fac0eb7cd65213ad3cc85")',
+            FURIA: 'url("https://img-cdn.hltv.org/teamlogo/mvNQc4csFGtxXk5guAh8m1.svg?ixlib=java-2.1.0&s=11e5056829ad5d6c06c5961bbe76d20c")',
              astralis: 'url("https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b2067")'
    
  }
